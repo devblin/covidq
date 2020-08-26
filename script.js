@@ -25,37 +25,15 @@ let ansOrNot = [
   [-1, -1]
 ];
 newGame.onclick = function () {
-  for (var j = 0; j < 4; j++) {
-    ansClass[j].classList.remove("correct");
-    ansClass[j].classList.remove("wrong");
-  }
-  for (var i = 0; i < 10; i++) {
-    ansOrNot[i][0] = -1;
-    ansOrNot[i][1] = -1;
-  }
-  quesNo = 0;
-  quizArea(0);
-  setNP();
-  score = 0;
+  exitORnew();
 };
 gameExit.onclick = function () {
-  quesNo = 0;
-  scoreArea.innerText = "";
-  quizArea(0);
-  setNP();
+  exitORnew();
   viewReason.style.display = "none";
   quizMain.style.display = "none";
   mainMenu.style.display = "flex";
-  for (var i = 0; i < 10; i++) {
-    ansOrNot[i][0] = -1;
-    ansOrNot[i][1] = -1;
-  }
-  for (var j = 0; j < 4; j++) {
-    ansClass[j].classList.remove("correct");
-    ansClass[j].classList.remove("wrong");
-  }
-  score = 0;
 };
+
 basicMode.onclick = function () {
   mainMenu.style.display = "none";
   quizMain.style.display = "flex";
@@ -169,4 +147,20 @@ function scoreDisplay() {
   if (c == 10) {
     scoreArea.innerText = "Your Score is " + score;
   }
+}
+function exitORnew() {
+  quesNo = 0;
+  scoreArea.innerText = "";
+  quizArea(0);
+  setNP();
+
+  for (var i = 0; i < 10; i++) {
+    ansOrNot[i][0] = -1;
+    ansOrNot[i][1] = -1;
+  }
+  for (var j = 0; j < 4; j++) {
+    ansClass[j].classList.remove("correct");
+    ansClass[j].classList.remove("wrong");
+  }
+  score = 0;
 }

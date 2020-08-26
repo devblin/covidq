@@ -8,26 +8,22 @@
     <title>CovidQ</title>
   </head>
   <body>
-    <h1>CovidQ</h1>
-    <br />
+    <h1 style="font-size: 50px; margin: 0.6em">CovidQ</h1>
     <div class="basicflex" id="menu">
-      <h3>A basic quiz based on COVID-19 facts</h3>
+      <h3 class="f20">A basic quiz based on COVID-19 facts</h3>
       <br />
-      <button class="btn f15 m5 br5" id="basic">Basic Mode</button>
-      <button class="btn f15 m5 br5" id="hacker">Hacker Mode</button>
+      <button class="btn f20 m5 br5" id="basic">Basic Mode</button>
+      <!-- <button class="btn f20 m5 br5" id="hacker">Hacker Mode</button> -->
     </div>
     <div class="basicflex" id="quizarea" data-game-type="basic">
       <div>
-        <!-- <button class="btn f15 br5" id="about">About</button> -->
-        <button class="btn f15 br5" id="newgame">New Game</button>
-        <button class="btn f15 br5" id="exit">Exit</button>
+        <button class="btn f18 br5" id="newgame">New Game</button>
+        <button class="btn f18 br5" id="exit">Exit</button>
       </div>
-      <h2 id="score" style="color: blue; margin-bottom: 0;"></h2>
-      <div style="max-width: 500px; margin: 5px;">
-        <h4 id="ques">
-          How can COVID-19 spread be avoided?
-        </h4>
-        <ul style="list-style: none;">
+      <h2 id="score" class="m10" style="color: blue"></h2>
+      <div style="max-width: 500px; margin: 5px">
+        <h4 id="ques" class="f20 m0">How can COVID-19 spread be avoided?</h4>
+        <ul style="list-style: none; margin-bottom: 8px" class="f18">
           <li class="ans">A. Social-Distancing</li>
           <li class="ans">B. ajsjdasda</li>
           <li class="ans">
@@ -46,15 +42,15 @@
 
           <button
             id="next"
-            style="float: right;"
+            style="float: right"
             class="nbtn f35 fas fa-arrow-circle-right"
           ></button>
         </div>
         <div id="reason" class="m10">
-          <h4 style="margin: 0px;">
+          <h3 style="margin: 5px">
             <u>Reason:</u>
-          </h4>
-          <div id="reasontxt">
+          </h3>
+          <div id="reasontxt" class="f18">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
             molestias veniam ducimus similique illum qui, ex corrupti veritatis
             eligendi odio? Eius, dolor tempora. Fugiat sapiente, nihil voluptas

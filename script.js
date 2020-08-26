@@ -1,5 +1,5 @@
 let basicMode = document.getElementById("basic");
-let hackerMode = document.getElementById("hacker");
+// let hackerMode = document.getElementById("hacker");
 let mainMenu = document.getElementById("menu");
 let viewReason = document.getElementById("reason");
 let ansClass = document.querySelectorAll(".ans");
@@ -90,7 +90,7 @@ window.onclick = function () {
 function quizArea(num) {
   viewReason.style.display = "none";
   quesText.setAttribute("data-ques", num);
-  quesText.innerText = ques[num][0];
+  quesText.innerText = parseInt(num) + 1 + ". " + ques[num][0];
   quesText.setAttribute("data-cans", ques[num][2]);
   reasonTxt.innerText = ques[num][3];
   for (var i = 0; i < 4; i++) {

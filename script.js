@@ -133,7 +133,7 @@ function checkAnsweredOrNot(num) {
         ansClass[i].classList.add("wrong");
       }
       reasonTxt.innerText = ques[num][3];
-      viewReason.style.display = "flex";
+      viewReason.style.display = "block";
     }
   }
 }

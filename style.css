@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  /* background-color: #20b2aa70; */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+h1 {
+  text-align: center;
+}
+/*  BUTTON AREA */
+.br5 {
+  border-radius: 5px;
+  border: 1px solid;
+}
+.nbtn {
+  border: none;
+  background-color: transparent;
+}
+.nbtn:hover {
+  cursor: pointer;
+  color: orangered;
+}
+.btn {
+  padding: 10px;
+}
+.btn:hover {
+  cursor: pointer;
+}
+/* MARGIN AREA */
+.m5 {
+  margin: 5px;
+}
+.m10 {
+  margin: 10px;
+}
+/* FONT AREA */
+.f15 {
+  font-size: 15px;
+}
+.f20 {
+  font-size: 20px;
+}
+.f35 {
+  font-size: 35px;
+}
+/* BASIC FLEX */
+.basicflex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* START BUTTON */
+#basic:hover {
+  background-color: indigo;
+  color: white;
+}
+#hacker:hover {
+  background-color: black;
+  color: goldenrod;
+}
+/* QUIZ AREA */
+ul {
+  padding: 0px;
+}
+ul > li {
+  padding: 6px;
+  border: 1px solid;
+  margin: 2px;
+  border-radius: 3px;
+}
+li:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transition: 0.1s;
+}
+#newgame:hover {
+  color: white;
+  background-color: green;
+}
+#about:hover {
+  background-color: blue;
+  color: white;
+}
+#exit:hover {
+  background-color: red;
+  color: white;
+}
+/* FOOTER */
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+/* ANSWERING */
+.correct {
+  background-color: green;
+  color: white;
+}
+.wrong {
+  background-color: red;
+  color: white;
+}
+#reason {
+  background-color: #ffff0080;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#reasontxt {
+  max-height: 100px;
+  overflow-y: scroll;
+}

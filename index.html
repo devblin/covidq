@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>CovidQ</title>
+  </head>
+  <body>
+    <h1>CovidQ</h1>
+    <br />
+    <div class="basicflex" id="menu">
+      <h3>A basic quiz based on COVID-19 facts</h3>
+      <br />
+      <button class="btn f15 m5 br5" id="basic">Basic Mode</button>
+      <button class="btn f15 m5 br5" id="hacker">Hacker Mode</button>
+    </div>
+    <div class="basicflex" id="quizarea" data-game-type="basic">
+      <div>
+        <!-- <button class="btn f15 br5" id="about">About</button> -->
+        <button class="btn f15 br5" id="newgame">New Game</button>
+        <button class="btn f15 br5" id="exit">Exit</button>
+      </div>
+      <h2 id="score" style="color: blue; margin-bottom: 0;"></h2>
+      <div style="max-width: 500px; margin: 5px;">
+        <h4 id="ques">
+          How can COVID-19 spread be avoided?
+        </h4>
+        <ul style="list-style: none;">
+          <li class="ans">A. Social-Distancing</li>
+          <li class="ans">B. ajsjdasda</li>
+          <li class="ans">
+            C. Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
+            recusandae beatae praesentium eum atque, modi facilis dolorem
+            officiis nobis sunt dignissimos impedit in totam laboriosam, quas
+            aliquid quos similique nam.
+          </li>
+          <li class="ans">D. NOTA</li>
+        </ul>
+        <div>
+          <button
+            class="nbtn f35 fas fa-arrow-circle-left"
+            id="previous"
+          ></button>
+
+          <button
+            id="next"
+            style="float: right;"
+            class="nbtn f35 fas fa-arrow-circle-right"
+          ></button>
+        </div>
+        <div id="reason" class="m10">
+          <h4 style="margin: 0px;">
+            <u>Reason:</u>
+          </h4>
+          <div id="reasontxt">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
+            molestias veniam ducimus similique illum qui, ex corrupti veritatis
+            eligendi odio? Eius, dolor tempora. Fugiat sapiente, nihil voluptas
+            tenetur veniam iste.
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>&copy; devblin</footer>
+  </body>
+</html>
+<script src="ques.js"></script>
+<script src="script.js"></script>

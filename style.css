@@ -4,10 +4,9 @@ body {
   flex-direction: column;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  height: 95vh;
+  height: 90vh;
   align-items: center;
   justify-content: center;
-  max-height: 95vh;
 }
 h1 {
   text-align: center;
@@ -96,8 +95,9 @@ li:hover {
 /* FOOTER */
 footer {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
 }
 /* ANSWERING */
 .correct {

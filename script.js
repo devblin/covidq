@@ -24,6 +24,13 @@ let ansOrNot = [
   [-1, -1],
   [-1, -1]
 ];
+
+quizMain.style.display = "none";
+scoreArea.innerHTML = "";
+viewReason.style.display = "none";
+quizArea(0);
+setNP();
+
 newGame.onclick = function () {
   exitORnew();
 };
@@ -38,11 +45,6 @@ basicMode.onclick = function () {
   mainMenu.style.display = "none";
   quizMain.style.display = "flex";
 };
-quizMain.style.display = "none";
-scoreArea.innerHTML = "";
-viewReason.style.display = "none";
-quizArea(0);
-setNP();
 
 var quesNo;
 function setNP() {
@@ -60,40 +62,41 @@ function setNP() {
   }
 }
 
-nextBtn.addEventListener("click", nextPage);
-prevBtn.addEventListener("click", prevPage);
+nextBtn.addEventListener("click", pageNav);
+prevBtn.addEventListener("click", pageNav);
 
-function nextPage() {
-  var targ = nextBtn.getAttribute("data-next");
+function pageNav(e) {
+  var targ;
+  if (e.target.getAttribute("id") == "next") {
+    targ = e.target.getAttribute("data-next");
+  } else {
+    targ = e.target.getAttribute("data-prev");
+  }
   quizArea(targ);
   checkAnsweredOrNot(targ);
   scoreDisplay();
   setNP();
 }
-function prevPage() {
-  var targ = prevBtn.getAttribute("data-prev");
-  quizArea(targ);
-  checkAnsweredOrNot(targ);
-  scoreDisplay();
-  setNP();
+
+function removeCWclass(i) {
+  ansClass[i].classList.remove("correct");
+  ansClass[i].classList.remove("wrong");
 }
+
 window.onclick = function () {
   scoreDisplay();
 };
+
 function quizArea(num) {
-  var que = ques[num][0];
-  var correctAns = ques[num][2];
-  var ansReason = ques[num][3];
   viewReason.style.display = "none";
   quesText.setAttribute("data-ques", num);
-  quesText.innerText = que;
-  quesText.setAttribute("data-cans", correctAns);
-  reasonTxt.innerText = ansReason;
+  quesText.innerText = ques[num][0];
+  quesText.setAttribute("data-cans", ques[num][2]);
+  reasonTxt.innerText = ques[num][3];
   for (var i = 0; i < 4; i++) {
     ansClass[i].innerHTML = ques[num][1][i];
     ansClass[i].setAttribute("data-ans", i);
-    ansClass[i].classList.remove("correct");
-    ansClass[i].classList.remove("wrong");
+    removeCWclass(i);
   }
 }
 
@@ -116,7 +119,6 @@ function checkAns(e) {
       }
       e.target.classList.add("wrong");
     }
-
     ansOrNot[quesNo][0] = answered;
     ansOrNot[quesNo][1] = correctAns;
     viewReason.style.display = "block";
@@ -137,6 +139,7 @@ function checkAnsweredOrNot(num) {
     }
   }
 }
+
 function scoreDisplay() {
   var c = 0;
   for (var i = 0; i < 10; i++) {
@@ -148,19 +151,18 @@ function scoreDisplay() {
     scoreArea.innerText = "Your Score is " + score;
   }
 }
+
 function exitORnew() {
   quesNo = 0;
   scoreArea.innerText = "";
   quizArea(0);
   setNP();
-
   for (var i = 0; i < 10; i++) {
     ansOrNot[i][0] = -1;
     ansOrNot[i][1] = -1;
   }
   for (var j = 0; j < 4; j++) {
-    ansClass[j].classList.remove("correct");
-    ansClass[j].classList.remove("wrong");
+    removeCWclass(j);
   }
   score = 0;
 }

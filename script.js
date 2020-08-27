@@ -12,6 +12,7 @@ let quizMain = document.getElementById("quizarea");
 let gameExit = document.getElementById("exit");
 let newGame = document.getElementById("newgame");
 var score = 0;
+let quesSize = ques.length;
 let ansOrNot = [
   [-1, -1],
   [-1, -1],
@@ -54,7 +55,7 @@ function setNP() {
   prevBtn.setAttribute("data-prev", quesNo - 1);
   if (quesNo == 0) {
     prevBtn.style.visibility = "hidden";
-  } else if (quesNo == 9) {
+  } else if (quesNo == quesSize - 1) {
     nextBtn.style.visibility = "hidden";
   } else {
     prevBtn.style.visibility = "visible";
@@ -142,12 +143,12 @@ function checkAnsweredOrNot(num) {
 
 function scoreDisplay() {
   var c = 0;
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < quesSize; i++) {
     if (ansOrNot[i][0] != -1 && ansOrNot[i][1] != -1) {
       c++;
     }
   }
-  if (c == 10) {
+  if (c == quesSize) {
     scoreArea.innerText = "Your Score is " + score;
   }
 }
@@ -157,7 +158,7 @@ function exitORnew() {
   scoreArea.innerText = "";
   quizArea(0);
   setNP();
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < quesSize; i++) {
     ansOrNot[i][0] = -1;
     ansOrNot[i][1] = -1;
   }

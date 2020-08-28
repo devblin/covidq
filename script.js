@@ -172,6 +172,7 @@ function scoreDisplay() {
     }
   }
   if (c == quesSize) {
+    clearInterval(newTimer);
     scoreArea.innerText = "Your Score is " + score;
   }
 }

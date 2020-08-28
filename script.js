@@ -13,14 +13,18 @@ let gameExit = document.getElementById("exit");
 let newGame = document.getElementById("newgame");
 let showQues = document.getElementById("showques");
 let trackClass;
+let scoreDetails = document.getElementById("details");
+let highScore = document.getElementById("highscore");
 var score = 0;
 let quesTrack = document.getElementById("questrack");
 let quesSize = ques.length;
 let ansOrNot = [];
+let quesNo;
 shuffle(ques);
 for (var i = 0; i < quesSize; i++) {
   ansOrNot.push([-1, -1]);
 }
+scoreDetails.style.display = "none";
 quesTrack.style.display = "none";
 quizMain.style.display = "none";
 scoreArea.innerHTML = "";
@@ -61,15 +65,20 @@ gameExit.onclick = function () {
   quizMain.style.display = "none";
   mainMenu.style.display = "flex";
 };
-var newTimer;
+let newTimer;
+let userName;
 basicMode.onclick = function () {
-  mainMenu.style.display = "none";
-  quizMain.style.display = "block";
-  newTimer = setInterval(timer, 1000);
-  track();
+  userName = prompt("Enter Your Name");
+  if (userName == null || userName == "") {
+    console.log("OK");
+  } else {
+    mainMenu.style.display = "none";
+    quizMain.style.display = "block";
+    newTimer = setInterval(timer, 1000);
+    track();
+  }
 };
 
-var quesNo;
 function setNP() {
   quesNo = quesText.getAttribute("data-ques");
   quesNo = parseInt(quesNo);
@@ -163,7 +172,16 @@ function checkAnsweredOrNot(num) {
     }
   }
 }
-
+function gameOver() {
+  clearInterval(newTimer);
+  storeScore(userName, score);
+  var x = JSON.parse(localStorage.getItem("covidq"));
+  var name = x[0]["name"];
+  var sc = x[0]["score"];
+  scoreDetails.style.display = "block";
+  highScore.innerText = "High Score " + sc + " by " + name;
+  scoreArea.innerText = "Your Score is " + score;
+}
 function scoreDisplay() {
   var c = 0;
   for (var i = 0; i < quesSize; i++) {
@@ -172,13 +190,13 @@ function scoreDisplay() {
     }
   }
   if (c == quesSize) {
-    clearInterval(newTimer);
-    scoreArea.innerText = "Your Score is " + score;
+    gameOver();
   }
 }
 
 function exitORnew() {
   clearInterval(newTimer);
+  scoreDetails.style.display = "none";
   timeMin = 10;
   timeSec = 0;
   quesNo = 0;
@@ -211,7 +229,14 @@ function timer() {
   if (timeMin < 10) {
     tMin = "0" + timeMin;
   }
+
   timerNum.innerText = "Timer: " + tMin + ":" + tSec;
+  if (timeMin == 0 && timeSec == 0) {
+    gameOver();
+    Array.from(ansClass).forEach(e => {
+      e.removeEventListener("click", checkAns);
+    });
+  }
 }
 
 function track() {
@@ -232,7 +257,7 @@ function gotoQues(e) {
   var targ = e.target.getAttribute("data-ques-track");
   quizArea(targ);
   checkAnsweredOrNot(targ);
-  scoreDisplay();
+  quesNo = targ;
   setNP();
 }
 
@@ -251,4 +276,20 @@ function checkQuesStatus(num) {
       trackClass[i].classList.add("attempted");
     }
   }
+}
+let scoreList;
+if (localStorage.getItem("covidq") != undefined) {
+  scoreList = JSON.parse(localStorage.getItem("covidq"));
+} else {
+  scoreList = [];
+}
+function storeScore(user, uscore) {
+  var newList = {};
+  newList["name"] = user;
+  newList["score"] = uscore;
+  scoreList.sort(function (a, b) {
+    return b.score - a.score;
+  });
+  scoreList.push(newList);
+  localStorage.setItem("covidq", JSON.stringify(scoreList));
 }

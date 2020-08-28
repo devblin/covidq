@@ -168,3 +168,8 @@ footer {
 .attempted:hover {
   background-color: rgba(0, 128, 0, 0.582) !important;
 }
+#details {
+  padding: 10px;
+  position: absolute;
+  background-color: black;
+}

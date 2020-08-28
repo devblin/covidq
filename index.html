@@ -8,20 +8,31 @@
     <title>CovidQ</title>
   </head>
   <body>
-    <h1 style="font-size: 50px; margin: 0.6em">CovidQ</h1>
+    <h1 style="font-size: 50px; margin: 0.4em">CovidQ</h1>
     <div class="basicflex" id="menu">
       <h3 class="f20">A basic quiz based on COVID-19 facts</h3>
       <br />
-      <button class="btn f20 m5 br5" id="basic">Basic Mode</button>
-      <!-- <button class="btn f20 m5 br5" id="hacker">Hacker Mode</button> -->
+      <button class="btn f20 m5 br5" id="basic">Start Quiz</button>
     </div>
-    <div class="basicflex" id="quizarea" data-game-type="basic">
-      <div>
-        <button class="btn f18 br5" id="newgame">New Game</button>
-        <button class="btn f18 br5" id="exit">Exit</button>
+    <div id="quizarea" data-game-type="basic">
+      <h2 id="score" class="m5" style="color: blue; text-align: center"></h2>
+      <div style="display: flex; justify-content: center">
+        <button class="btn f15 br5 m5" id="newgame">New Game</button>
+        <button class="btn f15 br5 m5" id="exit">Exit</button>
       </div>
-      <h2 id="score" class="m10" style="color: blue"></h2>
-      <div style="max-width: 500px; margin: 5px">
+      <div>
+        <button
+          id="showques"
+          class="nbtn fas fa-caret-square-down f35"
+        ></button>
+        <button
+          id="timer"
+          class="nbtn"
+          style="position: relative; float: right"
+        ></button>
+      </div>
+      <div id="questrack"></div>
+      <div style="max-width: 600px; margin: 5px">
         <h4 id="ques" class="f20 m0">How can COVID-19 spread be avoided?</h4>
         <ul style="list-style: none; margin-bottom: 8px" class="f18">
           <li class="ans">A. Social-Distancing</li>

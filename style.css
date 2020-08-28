@@ -128,3 +128,43 @@ footer {
   max-height: 87px;
   overflow-y: scroll;
 }
+#timer {
+  font-size: 20px;
+  font-weight: 900;
+  color: green;
+  /* margin: 5px; */
+  position: absolute;
+}
+#questrack {
+  position: absolute;
+  width: 135px;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: deepskyblue;
+}
+#questrack > div {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border-radius: 7px;
+  margin: 2.5px;
+  color: black;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#questrack > div:hover {
+  cursor: pointer;
+  color: red;
+}
+.attempted {
+  background-color: green !important;
+  color: white !important;
+}
+.attempted:hover {
+  background-color: rgba(0, 128, 0, 0.582) !important;
+}

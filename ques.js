@@ -105,6 +105,51 @@ let ques = [
     ],
     3,
     "People living with HIV should follow the general advice for example washing their hands regularly. It’s also important to keep taking antiretroviral treatment as prescribed. Exercising, eating healthily and getting good sleep are ways to boost your immune system so that you stay healthy.COVID-19 can also make lots of people feel anxious, so it’s important to look after your mental health too. Keep in touch with your friends and family online or over the phone, do things that you enjoy and talk how you are feeling. We all need to support each other during this time."
+  ],
+  [
+    " What happens to a person suffering from COVID-19?",
+    [
+      "Around 80% of the people will require no treatment as such and will recover on their own.",
+      " Around <20% or a small proportion may need hospitalisation.",
+      "A very small proportion basically suffering from chronic illness may need admission in an Intensive Care Unit (ICU).",
+      "All the above are correct"
+    ],
+    3,
+    "A person who develops COVID-19: Majority of the people (80%) does not require treatment and will recover on their own, small proportion (<20%) may need hospitalisation and a very small proportion who are underlying chronic illness may need to admit in an ICU."
+  ],
+  [
+    "The first case of novel coronavirus was identified in .....",
+    ["Beijing", "Shanghai", "Wuhan, Hubei ", "Tianjin"],
+    2,
+    "The first case of novel coronavirus was identified in Wuhan, Hubei Province, China."
+  ],
+  [
+    " What are the precautions that need to be taken to protect from the coronavirus?",
+    [
+      "Cover your nose and mouth when sneezing.",
+      "Add more garlic into your diet.",
+      "Visit your doctor for antibiotics treatment",
+      "Wash your hands after every hour."
+    ],
+    0,
+    "According to WHO, a person can take precautions by covering the nose and mouth while sneezing via tissue or an elbow. Then, immediately throw the tissue into a closed dustbin."
+  ],
+  [
+    "Thailand announced that it has proceeded to test its novel coronavirus vaccine on which animal/bird?",
+    ["Monkeys", "Lizards", "Hens", "Kites"],
+    0,
+    "After seeing positive results on mice now Thailand announced that it has proceeded to test its novel coronavirus vaccine on monkeys. The vaccine uses messenger RNA (mRNA) technology to weaken the strain of the virus and produce antigens to fight with the virus from the root."
+  ],
+  [
+    "What is Coronavirus?",
+    [
+      "It is a large family of viruses.",
+      "It belongs to the family of Nidovirus.",
+      "Both A and B are correct",
+      "Only A is correct."
+    ],
+    2,
+    "Coronaviruses are a large family of viruses and belong to the Nidovirus family or Nidovirales order, which includes Coronaviridae, Arteriviridae, and Roniviridae families."
   ]
 ];
 console.log(ques);

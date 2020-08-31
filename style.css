@@ -13,6 +13,41 @@ body {
 }
 h1 {
   text-align: center;
+  animation-name: multicolor;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes multicolor {
+  10% {
+    color: mediumpurple;
+  }
+  20% {
+    color: seagreen;
+  }
+  30% {
+    color: yellowgreen;
+  }
+  40% {
+    color: orange;
+  }
+  50% {
+    color: red;
+  }
+  60% {
+    color: brown;
+  }
+  70% {
+    color: cyan;
+  }
+  80% {
+    color: darkblue;
+  }
+  90% {
+    color: pink;
+  }
+  100% {
+    color: deeppink;
+  }
 }
 /*  BUTTON AREA */
 .br5 {
@@ -30,6 +65,7 @@ h1 {
 }
 .btn {
   padding: 10px;
+  background-color: #00bfff9e;
 }
 .btn:hover {
   cursor: pointer;
@@ -134,10 +170,9 @@ footer {
 #timer {
   font-size: 20px;
   font-weight: 900;
-  color: green;
-  /* margin: 5px; */
   position: absolute;
 }
+
 #questrack {
   position: absolute;
   width: 135px;

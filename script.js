@@ -24,6 +24,7 @@ shuffle(ques);
 for (var i = 0; i < quesSize; i++) {
   ansOrNot.push([-1, -1]);
 }
+
 scoreDetails.style.display = "none";
 quesTrack.style.display = "none";
 quizMain.style.display = "none";
@@ -177,7 +178,7 @@ function gameOver() {
   var x = JSON.parse(localStorage.getItem("covidq"));
   var name = x[0]["name"];
   var sc = x[0]["score"];
-  scoreDetails.style.display = "block";
+  scoreDetails.style.display = "flex";
   highScore.innerText = "High Score " + sc + " by " + name;
   scoreArea.innerText = "Your Score is " + score;
 }

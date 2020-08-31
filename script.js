@@ -31,7 +31,6 @@ scoreArea.innerHTML = "";
 viewReason.style.display = "none";
 quizArea(0);
 setNP();
-
 function upDown(val1, val2) {
   showQues.classList.remove(val1);
   showQues.classList.add(val2);

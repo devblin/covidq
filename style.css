@@ -1,5 +1,10 @@
 html {
   height: 100%;
+  animation-name: multibgcolor;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: reverse;
 }
 body {
   margin: 0;
@@ -26,7 +31,7 @@ h1 {
     color: seagreen;
   }
   30% {
-    color: yellowgreen;
+    color: rgb(205, 156, 50);
   }
   40% {
     color: orange;
@@ -35,7 +40,7 @@ h1 {
     color: red;
   }
   60% {
-    color: brown;
+    color: pink;
   }
   70% {
     color: cyan;
@@ -44,7 +49,7 @@ h1 {
     color: darkblue;
   }
   90% {
-    color: pink;
+    color: brown;
   }
   100% {
     color: deeppink;
@@ -66,10 +71,43 @@ h1 {
 }
 .btn {
   padding: 10px;
+  border: none;
   background-color: #00bfff9e;
 }
 .btn:hover {
   cursor: pointer;
+}
+@keyframes multibgcolor {
+  10% {
+    background-color: rgba(147, 112, 216, 0.2);
+  }
+  20% {
+    background-color: rgba(46, 139, 86, 0.2);
+  }
+  30% {
+    background-color: rgba(153, 205, 50, 0.2);
+  }
+  40% {
+    background-color: rgba(255, 166, 0, 0.2);
+  }
+  50% {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+  60% {
+    background-color: rgba(255, 192, 203, 0.2);
+  }
+  70% {
+    background-color: rgba(0, 255, 255, 0.2);
+  }
+  80% {
+    background-color: rgba(0, 0, 139, 0.2);
+  }
+  90% {
+    background-color: rgba(165, 42, 42, 0.2);
+  }
+  100% {
+    background-color: rgba(255, 20, 145, 0.2);
+  }
 }
 /* MARGIN AREA */
 .m0 {
@@ -121,7 +159,7 @@ ul > li {
   padding: 10px;
   border: 1px solid;
   margin: 5px;
-  border-radius: 3px;
+  border-radius: 6px;
 }
 li:hover {
   cursor: pointer;

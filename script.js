@@ -24,7 +24,9 @@ shuffle(ques);
 for (var i = 0; i < quesSize; i++) {
   ansOrNot.push([-1, -1]);
 }
-
+window.onclick = function () {
+  quesTrack.style.display;
+};
 scoreDetails.style.display = "none";
 quesTrack.style.display = "none";
 quizMain.style.display = "none";
@@ -32,21 +34,26 @@ scoreArea.innerHTML = "";
 viewReason.style.display = "none";
 quizArea(0);
 setNP();
-function upDown(val1, val2) {
+function upDown(val1, val2, val3) {
+  quesTrack.style.display = val3;
   showQues.classList.remove(val1);
   showQues.classList.add(val2);
 }
-
-showQues.onclick = function () {
-  var check = quesTrack.style.display;
-  if (check == "none") {
-    quesTrack.style.display = "flex";
-    upDown("fa-caret-square-down", "fa-caret-square-up");
+function showHideTrack(val) {}
+window.addEventListener("click", function (e) {
+  if (quesTrack.contains(e.target)) {
+    upDown("fa-caret-square-down", "fa-caret-square-up", "flex");
+  } else if (showQues.contains(e.target)) {
+    var check = quesTrack.style.display;
+    if (check == "none") {
+      upDown("fa-caret-square-down", "fa-caret-square-up", "flex");
+    } else {
+      upDown("fa-caret-square-up", "fa-caret-square-down", "none");
+    }
   } else {
-    quesTrack.style.display = "none";
-    upDown("fa-caret-square-up", "fa-caret-square-down");
+    upDown("fa-caret-square-up", "fa-caret-square-down", "none");
   }
-};
+});
 
 newGame.onclick = function () {
   quesTrack.innerText = "";
